@@ -5,7 +5,7 @@ from numpy import Infinity
 from ortools.linear_solver import pywraplp
 day_off = []
 
-f = open("TestCase/12_50_2_3.txt")
+f = open("TestCase/30_30_5_12.txt")
 fa = f.readlines()
 tmp = fa[0].split()
 N = int(tmp[0])
@@ -27,8 +27,8 @@ def creat_data_model() :
     data['N'] = N
     data['D'] = D
     data['day_off'] = day_off
-    data['a'] = 1
-    data['b'] = 3
+    data['a'] = a
+    data['b'] = b
     return data
 
 def main() :
@@ -96,5 +96,4 @@ def main() :
 
 if __name__ == '__main__' :
     main()
-
 
