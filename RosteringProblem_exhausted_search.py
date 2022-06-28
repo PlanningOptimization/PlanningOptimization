@@ -49,9 +49,10 @@ def Try (n, d) :
             Try(n+1, d)
 
     else :
-        for j in range(1, 5) : 
+        for j in range(5) : 
             Schedule[n,d] = j
-            num_nv[4*d + j-1] += 1
+            if j > 0:
+                num_nv[4*d + j-1] += 1
 
             if n == N-1 :
                 if check (d) :
@@ -62,7 +63,8 @@ def Try (n, d) :
             else :
                 Try(n+1, d)
 
-            num_nv[4*d + j-1] += -1
+            if j > 0:
+                num_nv[4*d + j-1] += -1
             Schedule[n,d] = 0
 
 Try (0,0)
