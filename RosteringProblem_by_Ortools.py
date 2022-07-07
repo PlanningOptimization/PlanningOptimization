@@ -5,7 +5,7 @@ from numpy import Infinity
 from ortools.linear_solver import pywraplp
 day_off = []
 
-f = open("TestCase/30_30_5_12.txt")
+f = open("TestCase/100_30_15_25.txt")
 fa = f.readlines()
 tmp = fa[0].split()
 N = int(tmp[0])
@@ -53,8 +53,12 @@ def main() :
         cons1.SetCoefficient(num_night[i], -1)
     for i in range(data['N']) :
         solver.Add(solver.Sum([Schedule[i,4*j] for j in range(data['D'])]) == num_night[i])
+    # for i in range(4*data['D']) :
+    #     solver.Add(solver.Sum([Schedule[j,i] for j in range(data['N'])]) == data['a'])
     for i in range(4*data['D']) :
-        solver.Add(solver.Sum([Schedule[j,i] for j in range(data['N'])]) == data['a'])
+        cons0 = solver.Constraint(data['a'], data['b'])
+        for j in range(data['N']) :
+            cons0.SetCoefficient(Schedule[j,i], 1)
     for i in range(data['N']) :
         for j in range(data['D']) :
             if j==0 :

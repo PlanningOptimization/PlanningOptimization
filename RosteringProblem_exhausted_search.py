@@ -1,6 +1,6 @@
 import numpy as np
 
-f = open("5_3_1_2.txt", "r")
+f = open("TestCase/6_3_1_3.txt", "r")
 data = f.readlines()
 temp = data[0].split(" ")
 N = int(temp[0])
