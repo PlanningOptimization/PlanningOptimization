@@ -88,16 +88,15 @@ def main() :
     if status == pywraplp.Solver.OPTIMAL :
         print("Solution : ")
         print('Objective value = ', solver.Objective().Value())
-        sol = np.zeros([data['N'], 4*data['D']])
-        for i in range(data['N']) :
-            for j in range(4*data['D']) :
-                # print(Schedule[i,j].name(), '=', Schedule[i,j].solution_value() )
-                sol[i,j] = Schedule[i,j].solution_value()
-        print(sol)
+        # sol = np.zeros([data['N'], 4*data['D']])
+        # for i in range(data['N']) :
+        #     for j in range(4*data['D']) :
+        #         # print(Schedule[i,j].name(), '=', Schedule[i,j].solution_value() )
+        #         sol[i,j] = Schedule[i,j].solution_value()
+        # print(sol)
 
     else :
         print("No solution")
-
 if __name__ == '__main__' :
     main()
 
