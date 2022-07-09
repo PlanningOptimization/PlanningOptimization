@@ -5,7 +5,7 @@ from numpy import Infinity
 from ortools.linear_solver import pywraplp
 day_off = []
 
-f = open("TestCase/100_30_15_25.txt")
+f = open("TestCase/200_60_35_50.txt")
 fa = f.readlines()
 tmp = fa[0].split()
 N = int(tmp[0])

@@ -33,7 +33,7 @@ for i in range(D) :
         offline.append(j)
     del candidate[0:a]
 for i in range(N) :
-    rand = random.random() 
+    rand = random.random()
     for j in range(D) :
         if Schedule[i,j] == 0 and random.random() < rand :
             f.write(str(j+1) + " ")
