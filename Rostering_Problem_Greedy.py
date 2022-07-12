@@ -69,6 +69,6 @@ for j in range(1,D+1) :
     if j == D :
         min_num_night = max(num_night)
 if min_num_night < 1000000 :
-    print(min_num_night)
+    print("Result : ",  min_num_night)
 else : 
     print("Cannot find any Solution :(((")
