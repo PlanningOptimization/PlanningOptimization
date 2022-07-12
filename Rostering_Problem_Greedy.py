@@ -53,8 +53,6 @@ for j in range(1,D+1) :
             if day_off[i,j-1] == 0 :
                 candidate_night.append(i)
     if len(candidate_night) + l < a :
-        print(Schedule)
-        print(j)
         break
     candidate_night.sort(key = heuristic, reverse=False)
     if l < a :
@@ -66,8 +64,6 @@ for j in range(1,D+1) :
         if Schedule[i,j] == 4 or day_off[i,j-1] == 1 :
             l+=1
     if N - l < 3*a :
-        print(j)
-        print(Schedule)
         break
 
     if j == D :
