@@ -33,7 +33,7 @@ for i in range(D) :
         offline.append(j)
     del candidate[0:a]
 for i in range(N) :
-    rand = random.random()*0.5 + 0.5
+    rand = random.random()
     for j in range(D) :
         if Schedule[i,j] == 0 and random.random() < rand :
             f.write(str(j+1) + " ")
@@ -41,6 +41,6 @@ for i in range(N) :
     if i < N-1 :
         f.write("\n")
 f.close()
-new_name ="TestCase/" + str(N) + "_" + str(D) + "_" + str(a) + "_" + str (b) + "hard.txt"
+new_name ="TestCase/" + str(N) + "_" + str(D) + "_" + str(a) + "_" + str (b) + ".txt"
 os.rename("TestCase/benchmark.txt", new_name)
 print("Create Success") 
